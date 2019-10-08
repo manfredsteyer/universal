@@ -1,4 +1,4 @@
-load("//tools:defaults.bzl", "npm_package", "ts_library")
+load("//tools:defaults.bzl", "jasmine_node_test", "npm_package", "ts_library", "ng_test_library")
 
 filegroup(
     name = "builders_assets",
@@ -7,7 +7,7 @@ filegroup(
     ] + [
         "package.json",
         "README.md",
-        "builders.json",
+        "builders.json"
     ]),
 )
 
@@ -17,6 +17,7 @@ ts_library(
         ["**/*.ts"],
         exclude = [
             "**/*.spec.ts",
+            "**/e2e/**",
         ],
     ),
     module_name = "@nguniversal/builders",
@@ -24,6 +25,7 @@ ts_library(
         "@npm//@angular-devkit/architect",
         "@npm//@angular-devkit/core",
         "@npm//rxjs",
+        "@npm//tree-kill",
     ],
 )
 
@@ -31,4 +33,30 @@ npm_package(
     name = "npm_package",
     srcs = [":builders_assets"],
     deps = [":builders"],
+)
+
+jasmine_node_test(
+    name = "unit_tests",
+    srcs = [":builders_test_sources"],
+    data = [
+        ":builders_assets",
+#        "//modules/common/schematics:npm_package",
+    ],
+)
+
+ng_test_library(
+    name = "builders_test_sources",
+    srcs = glob(
+        ["**/*.spec.ts"],
+        exclude = ["**/files/**/*", "**/e2e/**"],
+    ),
+    tsconfig = ":tsconfig.json",
+    deps = [
+        ":builders",
+#        "//modules/common/schematics",
+        "@npm//@angular-devkit/architect",
+        "@npm//@angular-devkit/core",
+        "@npm//rxjs",
+        "@npm//tree-kill",
+    ],
 )

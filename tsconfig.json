@@ -33,7 +33,8 @@
     "bazel-out",
     "dist",
     "node_modules",
-    "**/*/node_modules"
+    "**/*/node_modules",
+    "modules/builders/e2e/**"
   ],
   "compileOnSave": false,
   "buildOnSave": false,
