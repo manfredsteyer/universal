@@ -70,7 +70,7 @@
     "express": "^4.15.2",
     "hapi": "^17.5.1",
     "jasmine-core": "^2.8.0",
-    "karma": "^4.1.0",
+    "karma": "^6.3.16",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^2.0.1",
     "karma-sourcemap-loader": "^0.3.7",
