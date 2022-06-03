@@ -39,7 +39,7 @@
     "@angular/common": "^9.0.0-next.8",
     "@angular/compiler": "^9.0.0-next.8",
     "@angular/compiler-cli": "^9.0.0-next.8",
-    "@angular/core": "^9.0.0-next.8",
+    "@angular/core": "^11.0.5",
     "@angular/platform-browser": "^9.0.0-next.8",
     "@angular/platform-browser-dynamic": "^9.0.0-next.8",
     "@angular/platform-server": "^9.0.0-next.8",
