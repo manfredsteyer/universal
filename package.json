@@ -67,7 +67,7 @@
     "@types/jasmine": "^2.8.6",
     "@types/node": "^9.4.6",
     "domino": "^2.1.2",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "hapi": "^17.5.1",
     "jasmine-core": "^2.8.0",
     "karma": "^4.1.0",
